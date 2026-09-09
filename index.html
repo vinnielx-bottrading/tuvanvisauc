@@ -18,100 +18,55 @@ a{text-decoration:none;color:inherit}
 
 /* Header */
 .header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #dbe3ec;box-shadow:0 3px 15px rgba(8,38,74,.08)}
-.nav{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{width:92px;height:92px;object-fit:contain;display:block;flex:0 0 auto}
-.top-links{display:flex;gap:7px}
-.top-links button{border:0;background:transparent;color:var(--navy);font-weight:800;padding:11px 13px;border-radius:8px}
+.nav{min-height:86px;display:grid;grid-template-columns:220px minmax(340px,1fr) auto;align-items:center;gap:18px}
+.top-links{display:flex;align-items:center;justify-content:flex-end;gap:5px;flex-wrap:nowrap;white-space:nowrap}
+.top-links button{border:0;background:transparent;color:var(--navy);font-weight:800;font-size:16px;padding:11px 16px;border-radius:9px;white-space:nowrap}
 .top-links button:hover{background:#eef6ff}
 .top-links .active{background:var(--navy);color:#fff}
-.header-phone{
-  margin-left:auto;
-  margin-right:18px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  min-width:205px;
-  line-height:1.05;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  padding:9px 16px 10px;
+.brand-text{display:flex;align-items:center;width:auto;color:var(--blue2);font-size:21px;line-height:1.05;font-weight:950;letter-spacing:-.5px}
+.brand-text::first-line{color:var(--blue2)}
+.header-phone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;padding:5px 8px;border-radius:14px;position:relative;white-space:nowrap}
+.header-phone::before{content:"";position:absolute;inset:0;border-radius:14px;border:1px solid rgba(244,197,49,.25);box-shadow:0 0 0 rgba(244,197,49,0);animation:phoneGlow 4.2s ease-in-out infinite;pointer-events:none}
+@keyframes phoneGlow{0%,100%{box-shadow:0 0 0 rgba(244,197,49,0),0 0 0 rgba(23,105,170,0)}50%{box-shadow:0 0 16px rgba(244,197,49,.22),0 0 28px rgba(23,105,170,.08)}}
+.phone-label{color:#52667f;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.35px}
+.phone-numbers{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:nowrap}
+.phone-row{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
+.phone-number{color:var(--navy);font-weight:950;font-size:17px;line-height:1.1;letter-spacing:.15px}
+.phone-person{color:#607086;font-size:11px;font-weight:700}
+.bilingual-price .responsibility-cell{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.bilingual-price .responsibility-cell .party-block + .party-block{border-left:1px solid #dbe3ec;padding-left:16px}
+.bilingual-price .amount,.bilingual-price th.amount{display:none!important}
+@media(max-width:1100px){
+  .nav{grid-template-columns:190px minmax(300px,1fr) auto;gap:10px}
+  .brand-text{font-size:18px}
+  .phone-number{font-size:15px}
+  .phone-numbers{gap:10px}
+  .top-links button{font-size:14px;padding:10px 10px}
 }
-.header-phone .phone-label{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  color:#63758b;
-  text-transform:uppercase;
-  margin-bottom:4px;
-}
-.header-phone .phone-number{
-  font-size:24px;
-  font-weight:950;
-  letter-spacing:.4px;
-  color:var(--navy);
-  white-space:nowrap;
-  position:relative;
-  z-index:1;
-  padding:5px 12px 6px;
-  border-radius:10px;
-  background:rgba(244,197,49,.10);
-  border:1px solid rgba(244,197,49,.28);
-  text-shadow:0 1px 0 rgba(255,255,255,.75);
-  box-shadow:0 0 0 0 rgba(244,197,49,0), 0 0 12px rgba(244,197,49,.10);
-  animation:phoneGlow 4.2s ease-in-out infinite;
-}
-.header-phone::before{
-  content:"";
-  position:absolute;
-  top:-20%;
-  left:-35%;
-  width:28%;
-  height:150%;
-  transform:skewX(-22deg);
-  background:linear-gradient(90deg,transparent,rgba(244,197,49,.0),rgba(244,197,49,.72),rgba(255,255,255,.95),rgba(244,197,49,.0),transparent);
-  filter:blur(1px);
-  opacity:0;
-  animation:none;
-}
-.header-phone::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:12px;
-  box-shadow:0 0 0 1px rgba(23,105,170,.08), 0 0 18px rgba(244,197,49,.10);
-  pointer-events:none;
-}
-@keyframes phoneGlow{
-  0%,100%{
-    box-shadow:0 0 0 0 rgba(244,197,49,0), 0 0 10px rgba(244,197,49,.08);
-    border-color:rgba(244,197,49,.24);
-  }
-  50%{
-    box-shadow:0 0 0 3px rgba(244,197,49,.10), 0 0 24px rgba(244,197,49,.32), 0 0 42px rgba(244,197,49,.10);
-    border-color:rgba(244,197,49,.58);
-  }
-}
-@keyframes phoneShine{0%,100%{opacity:0}}
 @media(max-width:900px){
-  .header-phone{min-width:170px;margin-right:8px;padding:8px 10px}
-  .header-phone .phone-number{font-size:20px}
-  .header-phone .phone-label{font-size:10px}
+  .nav{grid-template-columns:170px 1fr auto;gap:8px;min-height:80px}
+  .brand-text{font-size:16px}
+  .phone-label{font-size:10px}
+  .phone-number{font-size:14px}
+  .phone-person{font-size:10px}
+  .phone-numbers{gap:8px}
+  .top-links{gap:2px}
+  .top-links button{font-size:13px;padding:9px 8px}
 }
-@media(max-width:800px){.nav{min-height:78px}.logo{width:72px;height:72px}.top-links button{font-size:12px;padding:8px 7px}.header-phone{order:2}.top-links{order:3}}
-@media(max-width:650px){
-  .header-phone{min-width:auto;flex:1;margin:0 8px}
-  .header-phone .phone-number{font-size:18px}
-  .header-phone .phone-label{display:none}
-  .nav{gap:8px}
-  .top-links button{font-size:11px;padding:7px 5px}
+@media(max-width:760px){
+  .nav{grid-template-columns:150px 1fr auto;gap:6px}
+  .brand-text{font-size:14px}
+  .header-phone{padding:4px 5px}
+  .phone-numbers{flex-direction:column;gap:1px}
+  .phone-number{font-size:13px}
+  .top-links button{font-size:12px;padding:8px 6px}
 }
-@media(max-width:520px){
+@media(max-width:620px){
+  .nav{grid-template-columns:1fr auto;min-height:74px}
   .header-phone{display:none}
+  .brand-text{font-size:17px}
+  .top-links button{font-size:12px;padding:8px 6px}
 }
-
 /* Hero */
 .hero{min-height:500px;color:#fff;position:relative;overflow:hidden;background:
 linear-gradient(90deg,rgba(5,27,53,.94) 0%,rgba(5,27,53,.82) 34%,rgba(5,27,53,.38) 64%,rgba(5,27,53,.12) 100%),
@@ -768,7 +723,7 @@ h2 {
 <div class="hero-copy">
 <div class="eyebrow">🇦🇺 AUSTRALIA · EMPLOYER SPONSORED</div>
 <h1><span class="hero-kicker">TƯ VẤN VISA ÚC</span>482 → <span>186 TRT</span></h1>
-<p>Thông tin điều kiện Visa 482, lộ trình PR 186 TRT, bảng giá dịch vụ và bảng kê khai thông tin khách hàng.</p>
+<p>Thông tin điều kiện Visa 482, lộ trình PR 186 TRT và bảng kê khai thông tin khách hàng.</p>
 <div class="hero-actions">
 <button class="hero-btn hero-primary" onclick="showTab('conditions')">Xem điều kiện 482 →</button>
 <button class="hero-btn hero-secondary" onclick="showTab('pricing')">Xem lộ trình triển khai</button>
@@ -1319,8 +1274,7 @@ h2 {
 </main>
 <footer>
 <div class="container">
-<strong>TƯ VẤN VISA AUSTRALIA - TƯ VẤN VISA ÚC 482-186</strong><br/>
-<small>Global Vision – Global Value</small>
+<strong>TƯ VẤN VISA AUSTRALIA - VISA 482-186</strong>
 </div>
 </footer>
 <script>
