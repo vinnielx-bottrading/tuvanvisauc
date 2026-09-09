@@ -18,11 +18,11 @@ module.exports = async (req, res) => {
     }
 
     const safeName = String(clientName).replace(/[^\p{L}\p{N}_-]+/gu, '_').slice(0, 80) || 'Khach_hang';
-    const filename = `VPS_Global_482_186_${safeName}.pdf`;
+    const filename = `Visa_482_186_${safeName}.pdf`;
 
-    const subject = `[VPS Global] Hồ sơ kê khai Visa 482/186 - ${clientName}`;
+    const subject = `[TƯ VẤN VISA AUSTRALIA] Hồ sơ kê khai Visa 482/186 - ${clientName}`;
     const text = [
-      'Kính gửi VPS Global,',
+      'Kính gửi bộ phận tư vấn Visa Australia,',
       '',
       'Có hồ sơ kê khai Visa 482/186 mới được gửi từ website.',
       '',
@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
       '',
       'Toàn bộ thông tin kê khai được đính kèm trong file PDF.',
       '',
-      'VPS GLOBAL - TƯ VẤN VISA ÚC 482-186'
+      'TƯ VẤN VISA AUSTRALIA - VISA 482-186'
     ].join('\n');
 
     // Resend expects a base64 attachment.
@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: process.env.MAIL_FROM || 'VPS Global Website <onboarding@resend.dev>',
+        from: process.env.MAIL_FROM || 'TƯ VẤN VISA AUSTRALIA <onboarding@resend.dev>',
         to: [recipient],
         subject,
         text,

@@ -1,4 +1,4 @@
-# VPS Global Visa 482–186 – GitHub + Vercel
+# TƯ VẤN VISA AUSTRALIA Visa 482–186 – GitHub + Vercel
 
 ## 1) Cấu trúc
 
@@ -12,9 +12,9 @@ Tạo các biến sau trong Vercel → Project → Settings → Environment Vari
 
 - `RESEND_API_KEY` = API key của Resend.
 - `RECIPIENT_EMAIL` = `vinnielx@gmail.com`
-- `MAIL_FROM` = email sender đã được xác minh trên Resend, ví dụ `VPS Global <noreply@yourdomain.com>`.
+- `MAIL_FROM` = email sender đã được xác minh trên Resend, ví dụ `TƯ VẤN VISA AUSTRALIA <noreply@yourdomain.com>`.
 
-Nếu chưa có `MAIL_FROM`, API sẽ dùng sender thử nghiệm `VPS Global Website <onboarding@resend.dev>`; để dùng domain riêng, hãy xác minh domain trên Resend trước.
+Nếu chưa có `MAIL_FROM`, API sẽ dùng sender thử nghiệm `TƯ VẤN VISA AUSTRALIA Website <onboarding@resend.dev>`; để dùng domain riêng, hãy xác minh domain trên Resend trước.
 
 ## 3) Deploy
 
